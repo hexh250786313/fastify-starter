@@ -6,13 +6,17 @@
     "scripts": {
         "build": "tsup",
         "start": "tsx ./src/index.ts",
-        "dev:watch": "tsx watch src/server.ts"
+        "dev:watch": "tsx watch src/server.ts",
+        "prepare": "husky"
     },
     "devDependencies": {
         "@biomejs/biome": "1.8.1",
         "@tsconfig/recommended": "^1.0.6",
         "@types/node": "^20.14.2",
         "fastify-tsconfig": "^2.0.0",
+        "husky": "^9.0.11",
+        "lint-staged": "^15.2.6",
+        "prettier": "^3.3.2",
         "tsup": "^8.1.0",
         "tsx": "^4.15.2",
         "typescript": "^5.4.5"
@@ -30,6 +34,10 @@
         "url": "https://github.com/hexh250786313/fastify-starter/issues"
     },
     "homepage": "https://github.com/hexh250786313/fastify-starter#readme",
+    "lint-staged": {
+        "*.{js,ts,jsx,tsx,json,jsonc}": ["npx biome format --write", "npx biome lint --write"],
+        "*.{html,md}": ["npx prettier --write --no-error-on-unmatched-pattern"]
+    },
     "tsup": {
         "entry": ["src/**/*.ts"],
         "splitting": false,

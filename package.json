@@ -35,7 +35,8 @@
     },
     "homepage": "https://github.com/hexh250786313/fastify-starter#readme",
     "lint-staged": {
-        "*.{js,ts,jsx,tsx,json,jsonc}": ["npx biome format --write", "npx biome lint --write"],
+        "*.{js,ts,jsx,tsx}": ["npx biome format --write", "npx biome lint --write", "tsc -noEmit"],
+        "*.{json,jsonc}": ["npx biome format --write", "npx biome lint --write"],
         "*.{html,md}": ["npx prettier --write --no-error-on-unmatched-pattern"]
     }
 }

@@ -37,15 +37,5 @@
     "lint-staged": {
         "*.{js,ts,jsx,tsx,json,jsonc}": ["npx biome format --write", "npx biome lint --write"],
         "*.{html,md}": ["npx prettier --write --no-error-on-unmatched-pattern"]
-    },
-    "tsup": {
-        "entry": ["src/**/*.ts"],
-        "splitting": false,
-        "sourcemap": true,
-        "clean": true,
-        "format": ["cjs", "esm"],
-        "legacyOutput": true,
-        "target": "es2018",
-        "onSuccess": "echo 'Build succeeded!'"
     }
 }

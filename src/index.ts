@@ -8,6 +8,8 @@ server.get('/', async () => {
     return { hello: 'world' };
 });
 
+const = "";
+
 const start = async () => {
     try {
         await server.listen({

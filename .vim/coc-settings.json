@@ -1,0 +1,28 @@
+{
+    "diagnostic-languageserver.formatFiletypes": {
+        "javascript": "biome",
+        "typescript": "biome",
+        "javascriptreact": "biome",
+        "typescriptreact": "biome",
+        "json": "biome",
+        "jsonc": "biome",
+        "markdown": "prettier",
+        "html": "prettier"
+    },
+    "diagnostic-languageserver.formatters": {
+        "biome": {
+            "command": "npx",
+            "args": ["biome", "format", "--stdin-file-path", "%filename"],
+            "rootPatterns": [".git"],
+            "isStdout": true,
+            "isStderr": true
+        },
+        "prettier": {
+            "command": "npx",
+            "args": ["prettier", "--stdin-filepath", "%filename"],
+            "rootPatterns": [".git"],
+            "isStdout": true,
+            "isStderr": true
+        }
+    }
+}
